@@ -6,7 +6,20 @@
         <link rel="stylesheet" href="style/index.css">
         <link rel="stylesheet" href="style/singleComment.css">
     </head>
-
+<?php /*
+    <script type="text/javascript" src="der/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="der/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        function get_position(){
+            var top_position = document.documentElement.scrollTop;
+        };
+        function set_position(){
+            var top_position = $.cookie('pos');
+            window.scrollTo(0,top_position)
+            $.cookie('pos', null);
+        };
+    </script>
+*/?>
 <?php
     require_once 'include/dbc.inc.php';
     require_once 'include/functions.inc.php';
