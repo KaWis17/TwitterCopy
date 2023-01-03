@@ -1,6 +1,6 @@
-
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 use JetBrains\PhpStorm\NoReturn;
 session_status() === PHP_SESSION_ACTIVE || session_start();
 function emptyInputSignup($name, $surname, $mail, $nick, $password, $repPassword): bool{
