@@ -5,7 +5,6 @@ if(isset($_POST["sub"])){
     require_once 'dbc.inc.php';
     require_once 'functions.inc.php';
 
-    echo 'test1';
     if (!empty($conn)) {
         deleteUser($conn, $id);
     }
