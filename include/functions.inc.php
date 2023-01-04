@@ -448,3 +448,27 @@ function displayComments($conn, $postID): void{
     header("location: $site#$postID");
     exit();
 }
+
+function displayComments($conn, $postID): void{
+    $sql = "SELECT * FROM comments WHERE postID = ?;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../index.php");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "i", $postID);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    while ($row = mysqli_fetch_assoc($resultData)) {
+        $username = getUserById($conn, $row['userID'])['nick'];
+        $userType = getUserById($conn, $row['userID'])['type'];
+        $content = $row['content'];
+
+        include 'singleComment.php';
+
+    }
+    mysqli_stmt_close($stmt);
+}
