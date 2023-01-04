@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $serverName = "x";
 $dBUsername = "x";
