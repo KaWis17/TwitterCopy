@@ -1,0 +1,104 @@
+#display-posts{
+    background-color: rgba(60,103,205,0.32);
+    padding: 15px 10%;
+    min-height: 100vh;
+}
+
+#add-post{
+    background-color: rgba(60,103,205,0.32);
+    padding: 15px 10%;
+    text-align: center;
+}
+
+.add-form{
+    display: inline-block;
+    border: 2px solid #05407b;
+    background-color: #badcff;
+    border-radius: 4px;
+    width: 100%;
+}
+
+input{
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #05407b;
+    border-radius: 4px;
+
+}
+
+#content{
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #05407b;
+    border-radius: 4px;
+    width: 75%;
+    height: 200px;
+    vertical-align: text-top;
+}
+
+.single-post{
+    width: 100%;
+    border: 2px solid #05407b;
+    border-radius: 4px;
+    background-color: #d5e3fa;
+}
+
+.title{
+    width: 75%;
+    font-weight: bold;
+}
+
+.content{
+    text-align: justify;
+    padding: 10px;
+    font-style: italic;
+}
+
+.user{
+    width: 25%;
+    text-align: right;
+    padding: 10px 30px 10px 0;
+}
+
+.points{
+    width: 25%;
+    text-align: right;
+    padding: 10px 30px 10px 0;
+}
+
+.like, .dislike, .delete{
+    margin: 0 30px 0 15px;
+    padding: 5px 10px;
+    color: white;
+    background-color: green;
+}
+
+.dislike{
+    background-color: red;
+}
+
+.delete{
+    background-color: black;
+    color: white;
+}
+
+.like:disabled, .dislike:disabled{
+    background-color: grey;
+}
+
+.anchor{
+    display: block;
+    height: 20vh; /* 50% viewport height */
+    margin-top: -20vh;
+    visibility: hidden;
+}
+
+.deletePost{
+    text-align: center;
+}
+
+
+
