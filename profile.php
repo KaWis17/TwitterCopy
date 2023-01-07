@@ -25,6 +25,7 @@ require_once 'include/functions.inc.php';
                 $mail = getUserByUsername($conn, $user)['email'];
                 $followerCount = getUserByUsername($conn, $user)['followerCount'];
                 $userType = getUserByUsername($conn, $user)['type'];
+                $userPhoto = getUserByUsername($conn, $user)['imagePath'];
 
                 if(isset($_SESSION['userType'])){
                     if($_SESSION['userType'] == 'admin' || $_SESSION['userNick']==$user){
@@ -56,8 +57,22 @@ require_once 'include/functions.inc.php';
                         Surname: <b>$surname</b></br>
                         eMail: <b>$mail</b></br>
                         Followers: <b>$followerCount</b></br>
-                        User type: <b>$userType</b></th>
-                        <th>";
+                        User type: <b>$userType</b></th>";
+
+                echo "<th>";
+                    if(!is_null($userPhoto)){
+                        echo "PHOTO";
+                    }
+                    else if(isset($_SESSION['userNick']) && $_SESSION['userNick'] == $user){
+                        echo "
+                            <form class='form' action='include/uploadPhoto.inc.php' method='post' enctype='multipart/form-data'>
+                                <input type='file' name='myPhoto'>
+                                <button id='follow' type='submit' name='sub'>UPLOAD PROFILE PICTURE</button>
+                            </form>
+                        ";
+                    }
+                echo "</th><th>";
+
                 echo "<form class='form' action='include/follow.inc.php' method='post'>";
                 echo "<input type='hidden' value='$id' name='id'/>";
                 if(isset($_SESSION['userNick'])){
@@ -68,9 +83,7 @@ require_once 'include/functions.inc.php';
                         echo "<button id='follow' type='submit' name='sub'>un-FOLLOW</button>";
                     }
                 }
-                else{
-                    echo "</th>";
-                }
+                echo "</th>";
                 echo "</form>";
                 echo "</tr>
                 </table>";
