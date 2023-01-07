@@ -22,9 +22,9 @@
                 </br>
                 <textarea name="content" id="content" placeholder="Content: "></textarea>
                 </br>
-                <button type="submit" name="submit">Add post</button>
+                <button type="submit" name="submit" id="submit">Add post</button>
             </form>
-        </div>
+            </div>
             ';
     }
     ?>

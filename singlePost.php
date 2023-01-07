@@ -57,7 +57,6 @@ if (isset($conn, $postID, $postTitle, $user, $postContent, $site, $points, $user
         echo "</tr>";
     }
 
-
     echo "<tr><td class='comments' colspan='3'>";
         displayComments($conn, $postID);
     echo "</td></tr>";
